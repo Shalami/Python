@@ -16,14 +16,14 @@ def main():
         userLength = int(input("How long would you like your password? - ")) #Ask the user for a length.
         #If their chosen length is less than six, print a suggestive message.
         if userLength < 6:
-            print("The strength of your password length is questionable.")
+            print("The strength of your password length is questionable.\n")
         numberPass = int(input("How many passwords would you like? - ")) #Ask for how many passwords to create.
         for i in range(numberPass): #Loop the write function for the amount of times specified by the user.
             write(passGen(userLength))#Call the write function with the parameter being the returned value from the passGen function.
-        print(str(numberPass), "passwords written to 'passw.txt'\nIt is recommended that you do not keep passwords in this file.") #Print a success message.
+        print(str(numberPass), "passwords written to 'passw.txt'\nIt is recommended that you do not keep passwords in this file.\n") #Print a success message.
         time.sleep(3) #Pause the program for 3 seconds.
     except ValueError:
-        print("Error: please enter an integer.")
+        print("Error: please enter an integer.\n")
         main()
 
 def passGen(length):
