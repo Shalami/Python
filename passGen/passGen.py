@@ -22,9 +22,9 @@ def main():
             write(passGen(userLength))#Call the write function with the parameter being the returned value from the passGen function.
         print(str(numberPass), "passwords written to 'passw.txt'\nIt is recommended that you do not keep passwords in this file.\n") #Print a success message.
         time.sleep(3) #Pause the program for 3 seconds.
-    except ValueError:
-        print("Error: please enter an integer.\n")
-        main()
+    except ValueError: #The user enters the wrong datatype for either 'userLength' or 'numberPass'.
+        print("Error: please enter an integer.\n") #Print an error message.
+        main() #Call the main() function again, looping.
 
 def passGen(length):
     chars = string.ascii_uppercase + string.ascii_lowercase + string.digits #Assign every letter of the alphabet and digits 0-9 to 'chars'.
@@ -37,7 +37,7 @@ def passGen(length):
 
 def write(text):
     op = open("passw.txt", "a") #Open the file 'passw.txt', or create it.
-    op.write(text) #Append the variable 'text' to the files.
+    op.write(text) #Append the variable 'text' to the file.
     op.close() #Close the file.
 
 if __name__ == '__main__':
